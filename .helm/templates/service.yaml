@@ -2,9 +2,9 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    app: {{ .Values.image.repository }}
-    tag: {{ .Values.image.tag }}
-  name: {{ .Values.image.repository }}-{{ .Values.image.tag }}
+    app: {{ .Values.labels.app }}
+    tag: {{ .Values.labels.tag }}
+  name: {{ .Values.labels.app }}-{{ .Values.labels.tag }}
   namespace:  {{ .Values.namespace.name }}
 spec:
   ports:
@@ -12,6 +12,6 @@ spec:
     protocol: TCP
     targetPort: {{ .Values.service.port }}
   selector:
-    app: {{ .Values.image.repository }}
-    tag: {{ .Values.image.tag }}
+    app: {{ .Values.labels.app }}
+    tag: {{ .Values.labels.tag }}
   type: {{ .Values.service.type }}

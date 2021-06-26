@@ -4,6 +4,10 @@ namespace:
 replica:
    count: 3
 
+labels:
+   app: nginx
+   tag: alpine
+   
 image:
   repository: nginx
   tag: alpine

@@ -3,5 +3,5 @@ data:
   {{ .Values.configmap.data }}
 kind: ConfigMap
 metadata:
-  name: {{ .Values.image.repository }}-version
+  name: {{ .Values.labels.app }}-version
   namespace:  {{ .Values.namespace.name }}
