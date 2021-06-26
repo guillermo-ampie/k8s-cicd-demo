@@ -7,7 +7,7 @@ replica:
 labels:
    app: nginx
    tag: alpine
-   
+
 image:
   repository: nginx
   tag: alpine
@@ -20,6 +20,7 @@ resources:
 service:
    type: ClusterIP
    port: 8111
+   targetPort: 80
 
 configmap:
    data: "version: alpine"
